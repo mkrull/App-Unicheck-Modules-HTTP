@@ -8,7 +8,6 @@ my $builder = Module::Build->new(
     license             => 'Artistic_2_0',
     dist_author         => q{Matthias Krull <<m.krull@uninets.eu>>},
     dist_version_from   => 'lib/Uninets/Check/Modules/HTTP.pm',
-    release_status      => 'stable',
     configure_requires => {
         'Module::Build' => 0,
     },

@@ -10,7 +10,7 @@ Version 0.01
 
 Uninets::Check::Modules::HTTP can check return status, response time and size of web resources.
 
-	# to sho available information on parameters run
+	# to show available information on parameters run
 	unicheck --info HTTP
 
 # ACTIONS
