@@ -41,7 +41,7 @@
    "provides" : {
       "Uninets::Check::Modules::HTTP" : {
          "file" : "lib/Uninets/Check/Modules/HTTP.pm",
-         "version" : "0.02"
+         "version" : "0.03"
       }
    },
    "release_status" : "stable",
@@ -53,5 +53,5 @@
          "url" : "https://github.com/uninets/Uninets-Check-Modules-HTTP"
       }
    },
-   "version" : "0.02"
+   "version" : "0.03"
 }
