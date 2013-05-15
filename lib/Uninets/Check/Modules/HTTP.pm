@@ -16,26 +16,26 @@ Uninets::Check::Modules::HTTP - Uninets::Check module to check web urls.
 
 =head1 VERSION
 
-Version 0.01
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 
 =head1 SYNOPSIS
 
 Uninets::Check::Modules::HTTP can check return status, response time and size of web resources.
 
-	# to show available information on parameters run
-	unicheck --info HTTP
+    # to show available information on parameters run
+    unicheck --info HTTP
 
 =cut
 
 sub run {
-	my ($self, $action, @params) = @_;
+    my ($self, $action, @params) = @_;
 
-	$self->$action(@params);
+    $self->$action(@params);
 }
 
 =head1 ACTIONS
@@ -44,147 +44,147 @@ sub run {
 
 Get the status code of a call to an URL.
 
-	unicheck HTTP status --url example.com
+    unicheck HTTP status --url example.com
 
 =cut
 
 sub status {
-	my ($self, @params) = @_;
+    my ($self, @params) = @_;
 
-	my $url    = 'http://127.0.0.1/';
-	my $redirects = 3;
-	my $format = 'num';
+    my $url    = 'http://127.0.0.1/';
+    my $redirects = 3;
+    my $format = 'num';
 
-	GetOptionsFromArray([@params],
-		'url=s' => \$url,
-		'redirects=i' => \$redirects,
-		'format=s' => \$format,
-	);
+    GetOptionsFromArray([@params],
+        'url=s' => \$url,
+        'redirects=i' => \$redirects,
+        'format=s' => \$format,
+    );
 
-	my $ua      = Mojo::UserAgent->new->max_redirects($redirects);
-	my $tx      = $ua->get($url);
-	my $status  = $tx->res->code;
-	my $headers = $tx->res->content->headers->{headers};
+    my $ua      = Mojo::UserAgent->new->max_redirects($redirects);
+    my $tx      = $ua->get($url);
+    my $status  = $tx->res->code;
+    my $headers = $tx->res->content->headers->{headers};
 
-	$self->_return($status, $headers, $format);
+    $self->_return($status, $headers, $format);
 }
 
 =head2 size
 
 Get the size of a web resource in bytes.
 
-	unicheck HTTP size --url example.com
+    unicheck HTTP size --url example.com
 
 =cut
 
 sub size {
-	my ($self, @params) = @_;
+    my ($self, @params) = @_;
 
-	my $url    = 'http://127.0.0.1/';
-	my $redirects = 3;
-	my $format = 'num';
+    my $url    = 'http://127.0.0.1/';
+    my $redirects = 3;
+    my $format = 'num';
 
-	GetOptionsFromArray([@params],
-		'url=s' => \$url,
-		'redirects=i' => \$redirects,
-		'format=s' => \$format,
-	);
+    GetOptionsFromArray([@params],
+        'url=s' => \$url,
+        'redirects=i' => \$redirects,
+        'format=s' => \$format,
+    );
 
-	my $ua      = Mojo::UserAgent->new->max_redirects($redirects);
-	my $tx      = $ua->get($url);
-	my $status  = $tx->res->content->{raw_size};
-	my $headers = $tx->res->content->headers->{headers};
+    my $ua      = Mojo::UserAgent->new->max_redirects($redirects);
+    my $tx      = $ua->get($url);
+    my $status  = $tx->res->content->{raw_size};
+    my $headers = $tx->res->content->headers->{headers};
 
-	defined $status ? $self->_return($status, $headers, $format) : $self->_return(-1, 'Something went wrong', $format);
+    defined $status ? $self->_return($status, $headers, $format) : $self->_return(-1, 'Something went wrong', $format);
 }
 
 =head2 time
 
 Get the delivery time of a web resource in milliseconds.
 
-	unicheck HTTP time --url example.com
+    unicheck HTTP time --url example.com
 
 =cut
 
 sub time {
-	my ($self, @params) = @_;
+    my ($self, @params) = @_;
 
-	my $url    = 'http://127.0.0.1/';
-	my $redirects = 3;
-	my $format = 'num';
+    my $url    = 'http://127.0.0.1/';
+    my $redirects = 3;
+    my $format = 'num';
 
-	GetOptionsFromArray([@params],
-		'url=s' => \$url,
-		'redirects=i' => \$redirects,
-		'format=s' => \$format,
-	);
+    GetOptionsFromArray([@params],
+        'url=s' => \$url,
+        'redirects=i' => \$redirects,
+        'format=s' => \$format,
+    );
 
-	my $ua      = Mojo::UserAgent->new->max_redirects($redirects);
-	my $start   = Time::HiRes::gettimeofday();
-	my $tx      = $ua->get($url);
-	my $end     = Time::HiRes::gettimeofday();
-	# elapsed time in ms
-	my $time    = sprintf("%.2f", ($end - $start) * 1000);
+    my $ua      = Mojo::UserAgent->new->max_redirects($redirects);
+    my $start   = Time::HiRes::gettimeofday();
+    my $tx      = $ua->get($url);
+    my $end     = Time::HiRes::gettimeofday();
+    # elapsed time in ms
+    my $time    = sprintf("%.2f", ($end - $start) * 1000);
 
-	my $status  = $tx->res->code;
-	defined $status ? $self->_return($time, {start => $start, end => $end}, $format) : $self->_return(-1, 'Something went wrong', $format);
+    my $status  = $tx->res->code;
+    defined $status ? $self->_return($time, {start => $start, end => $end}, $format) : $self->_return(-1, 'Something went wrong', $format);
 }
 
 sub _return {
-	my ($self, $status, $value, $format) = @_;
+    my ($self, $status, $value, $format) = @_;
 
-	return JSON->new->encode(
-		{
-			message => $value,
-			status  => $status,
-		}
-	) if $format eq 'json';
-	# default last in case some non supported format was given
-	return $status; # if $format eq 'num'
+    return JSON->new->encode(
+        {
+            message => $value,
+            status  => $status,
+        }
+    ) if $format eq 'json';
+    # default last in case some non supported format was given
+    return $status; # if $format eq 'num'
 }
 
 sub help {
-	{
-		description => 'Check web server and web app status',
-		actions => {
-			status => {
-				description => 'Get status code',
-				params => {
-					'--url'       => 'Default: http://127.0.0.1/',
-					'--redirects' => 'Default: 3',
-				},
-				formats => {
-					'num'  => 'Returns the status code',
-					'json' => 'Returns a JSON structure',
-				},
-				default_format => 'num',
-			},
-			size => {
-				description => 'Get page size',
-				params => {
-					'--url'       => 'Default: http://127.0.0.1/',
-					'--redirects' => 'Default: 3',
-				},
-				formats => {
-					'num'  => 'Returns the status code',
-					'json' => 'Returns a JSON structure',
-				},
-				default_format => 'num',
-			},
-			time => {
-				description => 'Get page delivery time',
-				params => {
-					'--url'       => 'Default: http://127.0.0.1/',
-					'--redirects' => 'Default: 3',
-				},
-				formats => {
-					'num'  => 'Returns the status code',
-					'json' => 'Returns a JSON structure',
-				},
-				default_format => 'num',
-			},
-		},
-	}
+    {
+        description => 'Check web server and web app status',
+        actions => {
+            status => {
+                description => 'Get status code',
+                params => {
+                    '--url'       => 'Default: http://127.0.0.1/',
+                    '--redirects' => 'Default: 3',
+                },
+                formats => {
+                    'num'  => 'Returns the status code',
+                    'json' => 'Returns a JSON structure',
+                },
+                default_format => 'num',
+            },
+            size => {
+                description => 'Get page size',
+                params => {
+                    '--url'       => 'Default: http://127.0.0.1/',
+                    '--redirects' => 'Default: 3',
+                },
+                formats => {
+                    'num'  => 'Returns the status code',
+                    'json' => 'Returns a JSON structure',
+                },
+                default_format => 'num',
+            },
+            time => {
+                description => 'Get page delivery time',
+                params => {
+                    '--url'       => 'Default: http://127.0.0.1/',
+                    '--redirects' => 'Default: 3',
+                },
+                formats => {
+                    'num'  => 'Returns the status code',
+                    'json' => 'Returns a JSON structure',
+                },
+                default_format => 'num',
+            },
+        },
+    }
 }
 
 
@@ -227,6 +227,10 @@ L<http://cpanratings.perl.org/d/Uninets-Check-Modules-HTTP>
 =item * Search CPAN
 
 L<http://search.cpan.org/dist/Uninets-Check-Modules-HTTP/>
+
+=item * Github
+
+L<https://github.com/uninets/Uninets-Check-Modules-HTTP/>
 
 =back
 

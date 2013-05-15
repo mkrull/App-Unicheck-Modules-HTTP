@@ -1,17 +1,17 @@
 # NAME
 
-Uninets::Check::Modules::HTTP - Uninets::Check module to check web urls.
+Uninets::Check::Modules::HTTP - Uninets::Check module to check web urls. [![Build Status](https://secure.travis-ci.org/uninets/Uninets-Check-Modules-MongoDB.png)](http://travis-ci.org/uninets/Uninets-Check-Modules-MongoDB)
 
 # VERSION
 
-Version 0.01
+Version 0.03
 
 # SYNOPSIS
 
 Uninets::Check::Modules::HTTP can check return status, response time and size of web resources.
 
-	# to show available information on parameters run
-	unicheck --info HTTP
+    # to show available information on parameters run
+    unicheck --info HTTP
 
 # ACTIONS
 
@@ -19,19 +19,19 @@ Uninets::Check::Modules::HTTP can check return status, response time and size of
 
 Get the status code of a call to an URL.
 
-	unicheck HTTP status --url example.com
+    unicheck HTTP status --url example.com
 
 ## size
 
 Get the size of a web resource in bytes.
 
-	unicheck HTTP size --url example.com
+    unicheck HTTP size --url example.com
 
 ## time
 
 Get the delivery time of a web resource in milliseconds.
 
-	unicheck HTTP time --url example.com
+    unicheck HTTP time --url example.com
 
 # AUTHOR
 
@@ -74,6 +74,10 @@ You can also look for information at:
 - Search CPAN
 
     [http://search.cpan.org/dist/Uninets-Check-Modules-HTTP/](http://search.cpan.org/dist/Uninets-Check-Modules-HTTP/)
+
+- Github
+
+    [https://github.com/uninets/Uninets-Check-Modules-HTTP/](https://github.com/uninets/Uninets-Check-Modules-HTTP/)
 
 
 
