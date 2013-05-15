@@ -1,6 +1,6 @@
 # NAME
 
-Uninets::Check::Modules::HTTP - Uninets::Check module to check web urls. [![Build Status](https://secure.travis-ci.org/uninets/Uninets-Check-Modules-MongoDB.png)](http://travis-ci.org/uninets/Uninets-Check-Modules-MongoDB)
+Uninets::Check::Modules::HTTP - Uninets::Check module to check web urls. [![Build Status](https://secure.travis-ci.org/uninets/Uninets-Check-Modules-HTTP.png)](http://travis-ci.org/uninets/Uninets-Check-Modules-HTTP)
 
 # VERSION
 
