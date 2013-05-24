@@ -3,7 +3,7 @@ require 5.010001;
 use ExtUtils::MakeMaker;
 WriteMakefile
 (
-  'NAME' => 'Uninets::Check::Modules::HTTP',
+  'NAME' => 'App::Unicheck::Modules::HTTP',
   'VERSION_FROM' => 'lib/Uninets/Check/Modules/HTTP.pm',
   'PREREQ_PM' => {
                    'JSON' => 0,

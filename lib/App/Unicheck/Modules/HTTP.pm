@@ -1,4 +1,4 @@
-package Uninets::Check::Modules::HTTP;
+package App::Unicheck::Modules::HTTP;
 
 use 5.10.1;
 use strict;
@@ -12,7 +12,7 @@ use Time::HiRes;
 
 =head1 NAME
 
-Uninets::Check::Modules::HTTP - Uninets::Check module to check web urls.
+App::Unicheck::Modules::HTTP - App::Unicheck module to check web urls.
 
 =head1 VERSION
 
@@ -25,7 +25,7 @@ our $VERSION = '0.03';
 
 =head1 SYNOPSIS
 
-Uninets::Check::Modules::HTTP can check return status, response time and size of web resources.
+App::Unicheck::Modules::HTTP can check return status, response time and size of web resources.
 
     # to show available information on parameters run
     unicheck --info HTTP
@@ -194,8 +194,8 @@ Matthias Krull, C<< <<m.krull at uninets.eu>> >>
 
 =head1 BUGS
 
-Please report any bugs or feature requests to C<bug-uninets-check-modules-http at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Uninets-Check-Modules-HTTP>.  I will be notified, and then you'll
+Please report any bugs or feature requests to C<bug-app-unicheck-modules-http at rt.cpan.org>, or through
+the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=App-Unicheck-Modules-HTTP>.  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
 
 
@@ -205,7 +205,7 @@ automatically be notified of progress on your bug as I make changes.
 
 You can find documentation for this module with the perldoc command.
 
-    perldoc Uninets::Check::Modules::HTTP
+    perldoc App::Unicheck::Modules::HTTP
 
 
 You can also look for information at:
@@ -214,23 +214,23 @@ You can also look for information at:
 
 =item * RT: CPAN's request tracker (report bugs here)
 
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Uninets-Check-Modules-HTTP>
+L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=App-Unicheck-Modules-HTTP>
 
 =item * AnnoCPAN: Annotated CPAN documentation
 
-L<http://annocpan.org/dist/Uninets-Check-Modules-HTTP>
+L<http://annocpan.org/dist/App-Unicheck-Modules-HTTP>
 
 =item * CPAN Ratings
 
-L<http://cpanratings.perl.org/d/Uninets-Check-Modules-HTTP>
+L<http://cpanratings.perl.org/d/App-Unicheck-Modules-HTTP>
 
 =item * Search CPAN
 
-L<http://search.cpan.org/dist/Uninets-Check-Modules-HTTP/>
+L<http://search.cpan.org/dist/App-Unicheck-Modules-HTTP/>
 
 =item * Github
 
-L<https://github.com/uninets/Uninets-Check-Modules-HTTP/>
+L<https://github.com/uninets/App-Unicheck-Modules-HTTP/>
 
 =back
 
@@ -281,4 +281,4 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =cut
 
-1; # End of Uninets::Check::Modules::HTTP
+1; # End of App::Unicheck::Modules::HTTP

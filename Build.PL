@@ -4,7 +4,7 @@ use warnings FATAL => 'all';
 use Module::Build;
 
 my $builder = Module::Build->new(
-    module_name         => 'Uninets::Check::Modules::HTTP',
+    module_name         => 'App::Unicheck::Modules::HTTP',
     license             => 'Artistic_2_0',
     dist_author         => q{Matthias Krull <<m.krull@uninets.eu>>},
     dist_version_from   => 'lib/Uninets/Check/Modules/HTTP.pm',
@@ -20,7 +20,7 @@ my $builder = Module::Build->new(
         'Mojo::UserAgent' => 0,
         'JSON' => 0,
     },
-    add_to_cleanup     => [ 'Uninets-Check-Modules-HTTP-* Build _build MYMETA.*' ],
+    add_to_cleanup     => [ 'App-Unicheck-Modules-HTTP-* Build _build MYMETA.*' ],
     create_makefile_pl => 'traditional',
 
     meta_add => {
@@ -29,7 +29,7 @@ my $builder = Module::Build->new(
     },
     meta_merge => {
         resources => {
-            repository => 'https://github.com/uninets/Uninets-Check-Modules-HTTP',
+            repository => 'https://github.com/uninets/App-Unicheck-Modules-HTTP',
         }
     }
 );

@@ -1,6 +1,6 @@
 # NAME
 
-Uninets::Check::Modules::HTTP - Uninets::Check module to check web urls. [![Build Status](https://secure.travis-ci.org/uninets/Uninets-Check-Modules-HTTP.png)](http://travis-ci.org/uninets/Uninets-Check-Modules-HTTP)
+App::Unicheck::Modules::HTTP - App::Unicheck module to check web urls. [![Build Status](https://secure.travis-ci.org/uninets/App-Unicheck-Modules-HTTP.png)](http://travis-ci.org/uninets/App-Unicheck-Modules-HTTP)
 
 # VERSION
 
@@ -8,7 +8,7 @@ Version 0.03
 
 # SYNOPSIS
 
-Uninets::Check::Modules::HTTP can check return status, response time and size of web resources.
+App::Unicheck::Modules::HTTP can check return status, response time and size of web resources.
 
     # to show available information on parameters run
     unicheck --info HTTP
@@ -39,8 +39,8 @@ Matthias Krull, `<<m.krull at uninets.eu>>`
 
 # BUGS
 
-Please report any bugs or feature requests to `bug-uninets-check-modules-http at rt.cpan.org`, or through
-the web interface at [http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Uninets-Check-Modules-HTTP](http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Uninets-Check-Modules-HTTP).  I will be notified, and then you'll
+Please report any bugs or feature requests to `bug-app-unicheck-modules-http at rt.cpan.org`, or through
+the web interface at [http://rt.cpan.org/NoAuth/ReportBug.html?Queue=App-Unicheck-Modules-HTTP](http://rt.cpan.org/NoAuth/ReportBug.html?Queue=App-Unicheck-Modules-HTTP).  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
 
 
@@ -53,7 +53,7 @@ automatically be notified of progress on your bug as I make changes.
 
 You can find documentation for this module with the perldoc command.
 
-    perldoc Uninets::Check::Modules::HTTP
+    perldoc App::Unicheck::Modules::HTTP
 
 
 
@@ -61,23 +61,23 @@ You can also look for information at:
 
 - RT: CPAN's request tracker (report bugs here)
 
-    [http://rt.cpan.org/NoAuth/Bugs.html?Dist=Uninets-Check-Modules-HTTP](http://rt.cpan.org/NoAuth/Bugs.html?Dist=Uninets-Check-Modules-HTTP)
+    [http://rt.cpan.org/NoAuth/Bugs.html?Dist=App-Unicheck-Modules-HTTP](http://rt.cpan.org/NoAuth/Bugs.html?Dist=App-Unicheck-Modules-HTTP)
 
 - AnnoCPAN: Annotated CPAN documentation
 
-    [http://annocpan.org/dist/Uninets-Check-Modules-HTTP](http://annocpan.org/dist/Uninets-Check-Modules-HTTP)
+    [http://annocpan.org/dist/App-Unicheck-Modules-HTTP](http://annocpan.org/dist/App-Unicheck-Modules-HTTP)
 
 - CPAN Ratings
 
-    [http://cpanratings.perl.org/d/Uninets-Check-Modules-HTTP](http://cpanratings.perl.org/d/Uninets-Check-Modules-HTTP)
+    [http://cpanratings.perl.org/d/App-Unicheck-Modules-HTTP](http://cpanratings.perl.org/d/App-Unicheck-Modules-HTTP)
 
 - Search CPAN
 
-    [http://search.cpan.org/dist/Uninets-Check-Modules-HTTP/](http://search.cpan.org/dist/Uninets-Check-Modules-HTTP/)
+    [http://search.cpan.org/dist/App-Unicheck-Modules-HTTP/](http://search.cpan.org/dist/App-Unicheck-Modules-HTTP/)
 
 - Github
 
-    [https://github.com/uninets/Uninets-Check-Modules-HTTP/](https://github.com/uninets/Uninets-Check-Modules-HTTP/)
+    [https://github.com/uninets/App-Unicheck-Modules-HTTP/](https://github.com/uninets/App-Unicheck-Modules-HTTP/)
 
 
 
