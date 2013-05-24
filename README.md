@@ -1,6 +1,6 @@
 # NAME
 
-App::Unicheck::Modules::HTTP - App::Unicheck module to check web urls. [![Build Status](https://secure.travis-ci.org/uninets/App-Unicheck-Modules-HTTP.png)](http://travis-ci.org/uninets/App-Unicheck-Modules-HTTP)
+App::Unicheck::Modules::HTTP - App::Unicheck module to check web urls. [![Build Status](https://secure.travis-ci.org/uninets/App-Unicheck-Modules-File.png)](http://travis-ci.org/uninets/App-Unicheck-Modules-File)
 
 # VERSION
 
